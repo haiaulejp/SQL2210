@@ -14,7 +14,7 @@ where length(fullname) = (select max(length(fullname)) from `account`) and depar
 
 -- câu 6 Lấy ra tên group đã tham gia trước ngày 20/12/2019--
 select * from `group`
-where createdDate > '2019-12-20';
+where createdDate < '2019-12-20';
 -- câu 7 Lấy ra ID của question có >= 4 câu trả lời--
 select questionid
 from answer
@@ -23,7 +23,7 @@ having count(questionid) >= 4;
  -- câu 8 Lấy ra các mã đề thi có thời gian thi >= 60 phút và được tạo trước ngày 20/12/2019--
  select `code`
  from exam 
- where duration >= 60 and createdDate > '2019-12-20';
+ where duration >= 60 and createdDate < '2019-12-20';
  
  -- câu 9 Lấy ra 5 group được tạo gần đây nhất--
  select groupname,createddate
